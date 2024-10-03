@@ -3,7 +3,7 @@ class City {
 }
 
 class HistoryService {
-  // Read from the searchHistory.json file
+  
   private async read(): Promise<City[]> {
       const fs = require('fs').promises;
       try {
@@ -15,7 +15,6 @@ class HistoryService {
       }
   }
 
-  // Write the updated cities array to the searchHistory.json file
   private async write(cities: City[]): Promise<void> {
       const fs = require('fs').promises;
       try {
@@ -25,20 +24,18 @@ class HistoryService {
       }
   }
 
-  // Get the list of cities from searchHistory.json
+ 
   async getCities(): Promise<City[]> {
       return await this.read();
   }
 
-  // Add a city to the searchHistory.json file
   async addCity(cityName: string): Promise<void> {
       const cities = await this.getCities();
-      const newCity = new City(Date.now().toString(), cityName);  // Create a new city with unique ID
+      const newCity = new City(Date.now().toString(), cityName);  
       cities.push(newCity);
       await this.write(cities);
   }
 
-  // BONUS: Remove a city from the searchHistory.json file
   async removeCity(cityId: string): Promise<void> {
       let cities = await this.getCities();
       cities = cities.filter(city => city.id !== cityId);
