@@ -7,7 +7,7 @@ const router = Router();
 
 router.post('/weather', async (req: Request, res: Response) => {
     try {
-        const { city } = req.body;  // Extract city name from request body
+        const { city } = req.body;  
         if (!city) {
             return res.status(400).json({ error: 'City name is required' });
         }
