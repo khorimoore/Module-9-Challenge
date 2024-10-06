@@ -11,6 +11,15 @@ This application provides weather data for multiple cities using the OpenWeather
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
+
+
+
+
+
+
+
+
+\ 
 - [API Information](#api-information)
 - [Contributing](#contributing)
 - [License](#license)
@@ -98,4 +107,3 @@ Contributions are welcome! Please fork this repository and submit a pull request
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
----
