@@ -1,15 +1,17 @@
+import express, { Router } from 'express';
 import path from 'path';
-import { fileURLToPath } from 'node:url';
-import { Router } from 'express';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const app = express();
 const router = Router();
-
+const PORT = process.env.PORT || 3000;
 
 router.get('/', (_req, res) => {
-    const filePath = path.join(__dirname, '../client/index.html');  
+    const filePath = path.join(__dirname, '../client/index.html');
     res.sendFile(filePath);
-}); 
+});
 
-export default router;
+app.use(router);
+
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});

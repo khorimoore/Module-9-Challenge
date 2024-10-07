@@ -29,7 +29,7 @@ router.post('/weather', async (req: Request, res: Response) => {
 // GET search history
 router.get('/history', async (_req: Request, res: Response) => {
     try {
-        // Fetch the search history from HistoryService
+        
         const history = await HistoryService.getCities();
         return res.json(history);
     } catch (error) {
